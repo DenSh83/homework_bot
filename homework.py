@@ -35,12 +35,12 @@ def check_tokens():
 def send_message(bot, message):
     """Отправка сообщения в Telegram чат."""
     try:
-        logging.INFO(f'Попытка отправки сообщения {message}')
+        logging.info(f'Попытка отправки сообщения {message}')
         bot.send_message(TELEGRAM_CHAT_ID, message)
     except Exception as error:
         logging.error(f'Ошибка отправки сообщения {error}')
     else:
-        logging.INFO(f'Сообщение в чат отправлено {message}')
+        logging.debug(f'Сообщение в чат отправлено {message}')
 
 
 def get_api_answer(timestamp):
