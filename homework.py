@@ -52,8 +52,6 @@ def get_api_answer(timestamp):
             headers=HEADERS,
             params=params
         )
-        if homework_statuses.status_code == HTTPStatus.INTERNAL_SERVER_ERROR:
-            raise Exception('Нет ответа от сервера')
         if homework_statuses.status_code != HTTPStatus.OK:
             raise Exception('Ошибка в коде состояния HTTP')
     except requests.RequestException as error:
